@@ -13,10 +13,8 @@ function Post(props) {
     if (docSnap.exists()) {
       const tempTitle = docSnap.data().title;
       const tempContent = docSnap.data().content;
-      setTitle(docSnap.data().title);
-      setContent(docSnap.data().content);
-      console.log(tempTitle.toString());
-      console.log(tempContent.toString());
+      setTitle(tempTitle);
+      setContent(tempContent);
     } else {
       console.log("No such document!");
     }

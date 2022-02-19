@@ -21,6 +21,7 @@
   height: 500px;
   margin-top: -16px;
   background-color: transparent;
+  overflow-y: scroll;
 }
 
 ul {

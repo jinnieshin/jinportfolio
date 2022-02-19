@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Profile.css";
 import "./img/profile.png";
+import { dbService } from "./FirebaseFunctions";
+import { getDoc, doc } from "firebase/firestore";
 
 function Profile() {
+  const [name, setName] = useState("");
+  const [birthday, setBirthday] = useState("");
+  const [email, setEmail] = useState("");
+  const [school, setSchool] = useState("");
+  const [course, setCourse] = useState("");
+
+  useEffect(async () => {
+    const docRef = doc(dbService, "profile", "profileInfo");
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      setName(docSnap.data().name);
+      setBirthday(docSnap.data().birthday);
+      setEmail(docSnap.data().email);
+      setSchool(docSnap.data().school);
+      setCourse(docSnap.data().course);
+    } else {
+      console.log("No such document!");
+    }
+  }, []);
+
   return (
     <div className="profileLayout">
       <img
@@ -11,12 +33,13 @@ function Profile() {
         alt="profile"
       ></img>
       <div className="profileTextBox">
-        <p className="name">Shin Jin</p>
-        <p className="birthday">01.11.2001</p>
+        <p className="name">{name}</p>
+        <p className="birthday">{birthday}</p>
+        <p className="email">{email}</p>
         <p className="course">
-          National University of Singapore
+          {school}
           <br />
-          Computer Science with a second major in Statistics
+          {course}
         </p>
       </div>
     </div>

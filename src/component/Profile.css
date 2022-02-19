@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "Iosevka-bold";
+  src: url("../font/Iosevka/iosevka-bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Iosevka-medium";
+  src: url("../font/Iosevka/iosevka-medium.ttf") format("truetype");
+}
+
+.profileLayout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileImage {
+  max-height: 500px;
+  width: fit-content;
+}
+
+.profileTextBox {
+  width: 600px;
+  height: 500px;
+  background-color: rgba(240, 248, 255, 0.5);
+  padding-left: 20px;
+}
+
+.name {
+  font-size: 36px;
+  color: #245b79;
+  font-family: "Iosevka-bold";
+}
+
+.birthday {
+  font-size: 20px;
+  font-family: "Iosevka-medium";
+}
+
+.course {
+  font-size: 22px;
+  font-family: "Iosevka-medium";
+}

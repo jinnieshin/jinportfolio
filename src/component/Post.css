@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Iosevka-bold";
+  src: url("../font/Iosevka/iosevka-bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Iosevka-medium";
+  src: url("../font/Iosevka/iosevka-medium.ttf") format("truetype");
+}
+
+.postStructure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  width: 1000px;
+  height: 60px;
+  background-color: rgba(198, 216, 231, 0.5);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  font-family: "Iosevka-bold";
+  font-size: 25px;
+}
+
+.content {
+  width: 1000px;
+  height: 440px;
+  background-color: rgba(240, 248, 255, 0.5);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  font-family: "Iosevka-medium";
+  font-size: 20px;
+  word-wrap: break-word;
+  overflow-y: scroll;
+}
